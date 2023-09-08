@@ -1,0 +1,19 @@
+.nav {
+  position: relative;
+  text-transform: uppercase;
+}
+.nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 4rem;
+}
+.nav li {
+  list-style: none;
+  letter-spacing: 2px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.nav li:hover {
+  color: var(--text-color-hover);
+}

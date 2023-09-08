@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Bebas Neue", sans-serif;
+}
+:root {
+  --backgorund-first: #d1ecda;
+  --text-color1: black;
+  --text-color-hover: rgb(91, 91, 91);
+
+  --secondary-color: #026467;
+  --body-text-color: #596392;
+  --navbar-footer-color: #f9f9f9;
+}
+
+.container {
+  padding: 2rem 6rem;
+  background-color: var(--backgorund-first);
+}
