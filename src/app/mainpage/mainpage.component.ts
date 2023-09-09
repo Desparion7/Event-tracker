@@ -21,8 +21,9 @@ export class MainpageComponent implements OnInit {
     canvas.height = window.innerHeight;
 
     const gradient = this.ctx.createLinearGradient(0, 0, 0, canvas.height);
-    gradient.addColorStop(0, 'white');
-    gradient.addColorStop(1, 'gold');
+    gradient.addColorStop(0, 'darkblue');
+    gradient.addColorStop(0.5, 'blue');
+    gradient.addColorStop(1, 'orangered');
     this.ctx.fillStyle = gradient;
     this.ctx.strokeStyle = gradient;
 
