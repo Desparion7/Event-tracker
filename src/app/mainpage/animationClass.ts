@@ -30,7 +30,7 @@ export class Effect {
       radius: 120,
     };
     this.maxDistance = 80;
-    this.debug = true;
+    this.debug = false;
     this.element = document.getElementById('caption')?.getBoundingClientRect();
 
     window.addEventListener('keydown', (e) => {
