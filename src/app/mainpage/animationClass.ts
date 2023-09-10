@@ -13,7 +13,14 @@ export class Effect {
   };
   maxDistance: number;
   debug: boolean;
-  element: DOMRect | undefined;
+  element: DOMRect;
+  canvasSize: DOMRect;
+  heading: {
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+  };
 
   constructor(canvas: any, context: CanvasRenderingContext2D) {
     this.canvas = canvas;
@@ -21,7 +28,7 @@ export class Effect {
     this.width = this.canvas.width;
     this.height = this.canvas.height;
     this.particles = [];
-    this.numberOfParticles = 500;
+    this.numberOfParticles = 600;
     this.createParticles();
     this.mouse = {
       x: this.width * 0.5,
@@ -31,7 +38,16 @@ export class Effect {
     };
     this.maxDistance = 80;
     this.debug = false;
-    this.element = document.getElementById('caption')?.getBoundingClientRect();
+    this.element = document
+      .getElementById('caption')
+      ?.getBoundingClientRect() as DOMRect;
+    this.canvasSize = this.canvas.getBoundingClientRect();
+    this.heading = {
+      x: this.element.x - this.canvasSize.x,
+      y: this.element.y - this.canvasSize.y + 60,
+      width: this.element.width,
+      height: this.element.height,
+    };
 
     window.addEventListener('keydown', (e) => {
       if (e.key === 'd') {
@@ -71,12 +87,12 @@ export class Effect {
       particle.draw(this.context);
       particle.update();
     });
-    if (this.debug && this.element) {
+    if (this.debug) {
       this.context.strokeRect(
-        this.element.x + 5,
-        this.element.y - 30,
-        this.element.width + 5,
-        this.element.height
+        this.heading.x + 5,
+        this.heading.y,
+        this.heading.width + 5,
+        this.heading.height
       );
     }
   }
@@ -106,7 +122,16 @@ export class Effect {
     this.canvas.height = height;
     this.width = width;
     this.height = height;
-    this.element = document.getElementById('caption')?.getBoundingClientRect();
+    this.element = document
+      .getElementById('caption')
+      ?.getBoundingClientRect() as DOMRect;
+    this.canvasSize = this.canvas.getBoundingClientRect();
+    this.heading = {
+      x: this.element.x - this.canvasSize.x,
+      y: this.element.y - this.canvasSize.y + 60,
+      width: this.element.width,
+      height: this.element.height,
+    };
     const gradient = this.context.createLinearGradient(0, 0, 0, height);
     gradient.addColorStop(0, 'darkblue');
     gradient.addColorStop(0.5, 'blue');
@@ -130,19 +155,23 @@ export class Particle {
   friction: number;
   width: number;
   height: number;
+  pushX: number;
+  pushY: number;
 
   constructor(effect: any) {
     this.effect = effect;
     this.radius = Math.floor(Math.random() * 7 + 1);
     this.x =
       this.radius + Math.random() * (this.effect.width - this.radius * 2);
-    this.y = -410 + Math.random() * this.effect.height * 0.5;
+    this.y = -610 + Math.random() * this.effect.height * 0.5;
     this.vx = Math.random() * 2 - 1;
     this.vy = 0;
     this.gravity = this.radius * 0.001;
     this.friction = 0.8;
     this.width = this.radius * 2;
     this.height = this.radius * 2;
+    this.pushX = 0;
+    this.pushY = 0;
   }
 
   draw(context: CanvasRenderingContext2D) {
@@ -174,14 +203,29 @@ export class Particle {
     // collision detection
     if (
       this.x - this.radius <
-        this.effect.element.x + this.effect.element.width &&
-      this.x - this.radius + this.width > this.effect.element.x &&
-      this.y - this.radius + 30 < this.effect.element.y + 5 &&
-      this.height + this.y - this.radius + 30 > this.effect.element.y
+        this.effect.heading.x + this.effect.heading.width &&
+      this.x - this.radius + this.width > this.effect.heading.x &&
+      this.y - this.radius < this.effect.heading.y + 5 &&
+      this.height + this.y - this.radius > this.effect.heading.y
     ) {
-      this.vy *= -1;
-      this.y = this.effect.element.y - this.radius - 30;
+      this.vy *= -0.9;
+      this.y = this.effect.heading.y - this.radius;
     }
+    if (this.effect.mouse.pressed) {
+      const dx = this.x - this.effect.mouse.x;
+      const dy = this.y - this.effect.mouse.y;
+      const distance = Math.hypot(dx, dy);
+      const force = this.effect.mouse.radius / distance;
+      if (distance < this.effect.mouse.radius) {
+        const angle = Math.atan2(dy, dx);
+        this.pushX += Math.cos(angle) * force;
+        this.pushY += Math.sin(angle) * force;
+      }
+    }
+    this.x += (this.pushX *= this.friction) + this.vx;
+    this.y += (this.pushY *= this.friction) + this.vy;
+
+
   }
 
   reset() {
