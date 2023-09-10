@@ -106,6 +106,7 @@ export class Effect {
     this.canvas.height = height;
     this.width = width;
     this.height = height;
+    this.element = document.getElementById('caption')?.getBoundingClientRect();
     const gradient = this.context.createLinearGradient(0, 0, 0, height);
     gradient.addColorStop(0, 'darkblue');
     gradient.addColorStop(0.5, 'blue');
@@ -136,7 +137,7 @@ export class Particle {
     this.x =
       this.radius + Math.random() * (this.effect.width - this.radius * 2);
     this.y = -410 + Math.random() * this.effect.height * 0.5;
-    this.vx = Math.random() * 1 - 0.5;
+    this.vx = Math.random() * 2 - 1;
     this.vy = 0;
     this.gravity = this.radius * 0.001;
     this.friction = 0.8;
@@ -175,10 +176,11 @@ export class Particle {
       this.x - this.radius <
         this.effect.element.x + this.effect.element.width &&
       this.x - this.radius + this.width > this.effect.element.x &&
-      this.y + 30 < this.effect.element.y + 5 &&
-      this.height + this.y + 30 > this.effect.element.y
+      this.y - this.radius + 30 < this.effect.element.y + 5 &&
+      this.height + this.y - this.radius + 30 > this.effect.element.y
     ) {
       this.vy *= -1;
+      this.y = this.effect.element.y - this.radius - 30;
     }
   }
 
@@ -190,5 +192,6 @@ export class Particle {
       this.effect.maxDistance -
       Math.random() * this.effect.height * 0.2;
     this.vy = 0;
+    this.vx = Math.random() * 2 - 1;
   }
 }
