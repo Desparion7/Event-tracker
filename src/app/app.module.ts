@@ -7,6 +7,7 @@ import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { EventsListPageComponent } from './events-list-page/events-list-page.component';
+import { EventListItemComponent } from './events-list-page/event-list-item/event-list-item.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { EventsListPageComponent } from './events-list-page/events-list-page.com
     FooterComponent,
     MainpageComponent,
     EventsListPageComponent,
+    EventListItemComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

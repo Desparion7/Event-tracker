@@ -1,9 +1,14 @@
 .nav {
   position: relative;
   text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
   color: var(--text-color2);
   background-color: var(--backgorund-first);
   font-family: "Bebas Neue", sans-serif;
+}
+.nav span {
+  color: #DD7C67;
 }
 .nav ul {
   display: flex;

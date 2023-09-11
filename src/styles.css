@@ -6,14 +6,14 @@
 }
 :root {
   --backgorund-first: #94d2b0;
-  --backgorund-second: #e5f5ea;
+  --backgorund-second: #e6f7ec;
   --text-color1: black;
-  --text-color2: rgb(0, 0, 0);
-  --text-color2-hover: rgb(179, 179, 179);
+  --text-color-hover1: rgb(86, 86, 86);
+  --text-color-hover2: #dd7c67;
 
-  --secondary-color: #148185;
-  --body-text-color: #596392;
-  --navbar-footer-color: #f9f9f9;
+  --btn-color: #dd7c67;
+
+  --border1: #b1b1b1;
 }
 
 .container {

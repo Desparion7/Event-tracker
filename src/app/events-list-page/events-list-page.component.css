@@ -1,9 +1,10 @@
 .events-search,
 .events-filtrs {
   padding: 1rem;
-  border: 1px solid #b1b1b1;
-  background-color: var(--backgorund-second);
   margin-bottom: 1rem;
+  border: 1px solid var(--border1);
+  background-color: var(--backgorund-second);
+  border-radius: 5px;
 }
 .events-filtrs-options {
   display: flex;
@@ -14,6 +15,8 @@
 input {
   width: 50%;
   padding: 0.5rem;
+  border: 1px solid var(--border1);
+  border-radius: 5px;
 }
 .events-filtrs-text {
   display: flex;
@@ -31,6 +34,7 @@ input {
   width: 20%;
   cursor: pointer;
   color: white;
-  background-color: var(--secondary-color);
+  background-color: var(--btn-color);
   border: none;
+  border-radius: 5px;
 }
