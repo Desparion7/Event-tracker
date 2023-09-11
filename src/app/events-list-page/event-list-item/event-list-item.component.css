@@ -1,13 +1,25 @@
 .eventListItem {
+  position: relative;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1rem;
+  padding-right: 2rem;
   margin-bottom: 0.5rem;
-  background-color: var(--backgorund-second);
   border: 1px solid var(--border1);
   border-radius: 5px;
   cursor: pointer;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.853);
+  transition: background-color 0.3s;
 }
+.eventListItem:hover {
+  background-color: rgba(255, 255, 255, 0.769);
+}
+.eventListItem button {
+  white-space: nowrap;
+}
+
 .eventListItem-info {
   display: flex;
   flex-direction: row;
@@ -52,4 +64,10 @@
 }
 .eventListItem-info-creator-title {
   font-size: 0.8rem;
+}
+.eventListItem-backgroundImg {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  left: 0;
 }

@@ -6,6 +6,9 @@
   background-color: var(--backgorund-second);
   border-radius: 5px;
 }
+.events-search {
+  text-align: center;
+}
 .events-filtrs-options {
   display: flex;
   justify-content: space-between;
@@ -30,11 +33,5 @@ input {
   padding: 0.5rem;
 }
 .events-filtrs-text button {
-  padding: 0.5rem;
   width: 20%;
-  cursor: pointer;
-  color: white;
-  background-color: var(--btn-color);
-  border: none;
-  border-radius: 5px;
 }

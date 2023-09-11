@@ -7,15 +7,30 @@
 :root {
   --backgorund-first: #94d2b0;
   --backgorund-second: #e6f7ec;
-  --text-color1: black;
+  --text-color1: white;
+  --text-color2: black;
   --text-color-hover1: rgb(86, 86, 86);
-  --text-color-hover2: #dd7c67;
+  --text-color-hover2: #df6b51;
 
-  --btn-color: #dd7c67;
+  --btn-color: #df6b51;
+  --btn-color-hover: #e64d2b;
 
   --border1: #b1b1b1;
 }
 
 .container {
   padding: 2rem 6rem;
+}
+
+.btn-main {
+  padding: 1rem;
+  cursor: pointer;
+  color: var(--text-color1);
+  background-color: var(--btn-color);
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.btn-main:hover {
+  background-color: var(--btn-color-hover);
 }

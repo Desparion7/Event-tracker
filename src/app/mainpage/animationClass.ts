@@ -28,7 +28,7 @@ export class Effect {
     this.width = this.canvas.width;
     this.height = this.canvas.height;
     this.particles = [];
-    this.numberOfParticles = 600;
+    this.numberOfParticles = 400;
     this.createParticles();
     this.mouse = {
       x: this.width * 0.5,
