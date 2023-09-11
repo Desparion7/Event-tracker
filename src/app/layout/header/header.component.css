@@ -1,6 +1,9 @@
 .nav {
   position: relative;
   text-transform: uppercase;
+  color: var(--text-color2);
+  background-color: var(--backgorund-first);
+  font-family: "Bebas Neue", sans-serif;
 }
 .nav ul {
   display: flex;
@@ -13,7 +16,8 @@
   letter-spacing: 2px;
   font-size: 1.3rem;
   cursor: pointer;
+  transition: color 0.3s;
 }
 .nav li:hover {
-  color: var(--text-color-hover);
+  color: var(--text-color2-hover);
 }

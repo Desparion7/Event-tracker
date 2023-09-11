@@ -1,0 +1,45 @@
+<div class="events container">
+  <div class="events-search"><h2>Event search</h2></div>
+  <form class="events-filtrs">
+    <div class="events-filtrs-options">
+      <select formControlName="category">
+        <option value="">All Category</option>
+        <option value="Theater Performances">Theater Performances</option>
+        <option value="Stand-up Performances">Stand-up Performances</option>
+        <option value="Music Concert">Music Concert</option>
+        <option value="Cabaret Performance">Cabaret Performance</option>
+        <option value="Sport Event">Sport Event</option>
+        <option value="Other Events">Other Events</option>
+      </select>
+      <select formControlName="localization">
+        <option value="All Localization">All Localization</option>
+        <option value="woj. Dolnośląskie">woj. Dolnośląskie</option>
+        <option value="woj. Kujawsko-pomorskie">woj. Kujawsko-pomorskie</option>
+        <option value="woj. Lubelskie">woj. Lubelskie</option>
+        <option value="woj. Lubuskie">woj. Lubuskie</option>
+        <option value="woj. Łódzkie">woj. Łódzkie</option>
+        <option value="woj. Małopolskie">woj. Małopolskie</option>
+        <option value="woj. Mazowieckie">woj. Mazowieckie</option>
+        <option value="woj. Opolskie">woj. Opolskie</option>
+        <option value="woj. Podkarpackie">woj. Podkarpackie</option>
+        <option value="woj. Podlaskie">woj. Podlaskie</option>
+        <option value="woj. Pomorskie">woj. Pomorskie</option>
+        <option value="woj. Śląskie">woj. Śląskie</option>
+        <option value="woj. Świętokrzyskie">woj. Świętokrzyskie</option>
+        <option value="woj. Warmińsko-Mazurskie">
+          woj. Warmińsko-Mazurskie
+        </option>
+        <option value="woj. Wielkopolskie">woj. Wielkopolskie</option>
+        <option value="woj. Zachodniopomorskie">woj. Zachodniopomorskie</option>
+      </select>
+      <select formControlName="localization">
+        <option value="Sort By Date">Sort By Date</option>
+        <option value="Sort By City">Sort By City</option>
+      </select>
+    </div>
+    <div class="events-filtrs-text">
+      <input type="text" placeholder="Event name or city" />
+      <button>Search Events</button>
+    </div>
+  </form>
+</div>

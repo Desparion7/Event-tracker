@@ -3,19 +3,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Bebas Neue", sans-serif;
 }
 :root {
-  --backgorund-first: #d1ecda;
+  --backgorund-first: #94d2b0;
+  --backgorund-second: #e5f5ea;
   --text-color1: black;
-  --text-color-hover: rgb(91, 91, 91);
+  --text-color2: rgb(0, 0, 0);
+  --text-color2-hover: rgb(179, 179, 179);
 
-  --secondary-color: #026467;
+  --secondary-color: #148185;
   --body-text-color: #596392;
   --navbar-footer-color: #f9f9f9;
 }
 
 .container {
   padding: 2rem 6rem;
-  background-color: var(--backgorund-first);
 }
