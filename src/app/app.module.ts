@@ -8,6 +8,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { EventsListPageComponent } from './events-list-page/events-list-page.component';
 import { EventListItemComponent } from './events-list-page/event-list-item/event-list-item.component';
+import { EventPageComponent } from './event-page/event-page.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { EventListItemComponent } from './events-list-page/event-list-item/event
     MainpageComponent,
     EventsListPageComponent,
     EventListItemComponent,
+    EventPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

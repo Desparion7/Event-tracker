@@ -8,7 +8,6 @@
   margin-bottom: 0.5rem;
   border: 1px solid var(--border1);
   border-radius: 5px;
-  cursor: pointer;
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.853);
   transition: background-color 0.3s;
@@ -33,6 +32,7 @@
 }
 .eventListItem-info-location-place {
   font-weight: bold;
+  cursor: pointer;
   transition: color 0.3s;
 }
 .eventListItem-info-location-place:hover {
@@ -54,6 +54,7 @@
   flex-direction: column;
   justify-content: space-around;
   transition: color 0.3s;
+  cursor: pointer;
 }
 .eventListItem-info-creator:hover {
   color: var(--text-color-hover2);
