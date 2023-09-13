@@ -1,13 +1,18 @@
-<div>
-  <div>
-    <img src="" alt="" />
-    <div>
+<div class="event container">
+  <h2 class="borderBox">
+    Mateusz Socha Marki! Mateusz Socha- "Panie Mateuszu"
+  </h2>
+  <div class="event-top borderBox">
+    <div class="event-top-img">
+      <img src="../../assets/socha.webp" alt="" />
+    </div>
+    <div class="event-top-time">
       <p>September 13, 2023 at 20:30</p>
       <p>Warszawa - woj. Mazowieckie</p>
       <p>Amfiteatr Cemowo, ul. Władysława Raginisa</p>
     </div>
   </div>
-  <div>
+  <div class="event-text borderBox">
     <p>
       Zapraszamy na koncerty najnowszego programu stand-up Mateusza Sochy pt.
       "Panie Mateuszu"! UWAGA! - Wstęp na wydarzenie będzie możliwy tylko i
@@ -19,39 +24,49 @@
       video jest zabronione - Bilet nie daje prawa do przeszkadzania
       występującym. - Organizator zastrzega sobie prawo wyproszenia
       przeszkadzającej osoby, bez możliwości zwrotu za bilety. - Kupując bilet
-      akceptujesz powyższe uwagi. Read more on:
+      akceptujesz powyższe uwagi.
     </p>
   </div>
-  <div>
-    <div>
+  <div class="event-info">
+    <div class="event-info-item">
       <i class="fa-regular fa-clock"></i>
       <p>110 min</p>
-      <span>estimated length of performance</span>
+      <span> length of performance</span>
     </div>
-    <div>
+    <div class="event-info-item">
       <i class="fa-regular fa-hand"></i>
       <p>from 18 years</p>
       <span>age restrictions</span>
     </div>
-    <div>
+    <div class="event-info-item">
       <i class="fa-solid fa-door-open"></i>
       <p>17:00</p>
       <span>opening the entrance</span>
     </div>
-    <div>
+    <div class="event-info-item">
       <i class="fa-solid fa-stopwatch"></i>
       <p>no break</p>
       <span>planned interactions</span>
     </div>
-    <div>
+    <div class="event-info-item">
       <i class="fa-solid fa-camera"></i>
       <p>prohibited</p>
       <span>recording policy</span>
     </div>
-    <div>
+    <div class="event-info-item">
       <i class="fa-solid fa-bottle-water"></i>
       <p>prohibited</p>
       <span>bringing own drinks</span>
     </div>
   </div>
+  <form class="event-comment-form borderBox">
+    <p>Add comment</p>
+    <textarea cols="20" rows="5"></textarea>
+    <div class="event-comment-form-btn ">
+      <button class="btn-main" type="submit">Add Comment</button>
+    </div>
+  </form>
+  <app-comment></app-comment>
+  <app-comment></app-comment>
+  <app-comment></app-comment>
 </div>

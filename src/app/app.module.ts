@@ -9,6 +9,7 @@ import { MainpageComponent } from './mainpage/mainpage.component';
 import { EventsListPageComponent } from './events-list-page/events-list-page.component';
 import { EventListItemComponent } from './events-list-page/event-list-item/event-list-item.component';
 import { EventPageComponent } from './event-page/event-page.component';
+import { CommentComponent } from './event-page/comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { EventPageComponent } from './event-page/event-page.component';
     EventsListPageComponent,
     EventListItemComponent,
     EventPageComponent,
+    CommentComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

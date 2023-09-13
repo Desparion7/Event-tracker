@@ -21,6 +21,13 @@
 .container {
   padding: 2rem 6rem;
 }
+.borderBox {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border1);
+  background-color: var(--backgorund-second);
+  border-radius: 5px;
+}
 
 .btn-main {
   padding: 1rem;
