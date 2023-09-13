@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./event-page.component.css'],
 })
 export class EventPageComponent {
-  
+  stars = 0;
+  onStarHover(hoveredStars: number) {
+    this.stars = hoveredStars;
+  }
 }

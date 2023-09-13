@@ -1,0 +1,13 @@
+.event-comment {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+}
+.event-comment-author {
+  display: flex;
+  flex-direction: column;
+}
+.event-comment-author p {
+  margin: 0.2rem 0;
+}

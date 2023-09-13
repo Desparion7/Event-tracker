@@ -61,8 +61,16 @@
   </div>
   <form class="event-comment-form borderBox">
     <p>Add comment</p>
+    <p>
+      <i
+        (mouseover)="onStarHover(i + 1)"
+        [class]="stars > i ? 'fa-solid fa-star' : 'fa-regular fa-star'"
+        *ngFor="let _ of [].constructor(5); let i = index"
+      ></i>
+    </p>
     <textarea cols="20" rows="5"></textarea>
-    <div class="event-comment-form-btn ">
+
+    <div class="event-comment-form-btn">
       <button class="btn-main" type="submit">Add Comment</button>
     </div>
   </form>
