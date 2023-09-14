@@ -10,6 +10,8 @@ import { EventsListPageComponent } from './events-list-page/events-list-page.com
 import { EventListItemComponent } from './events-list-page/event-list-item/event-list-item.component';
 import { EventPageComponent } from './event-page/event-page.component';
 import { CommentComponent } from './event-page/comment/comment.component';
+import { AddEventComponent } from './add-event/add-event.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,9 @@ import { CommentComponent } from './event-page/comment/comment.component';
     EventListItemComponent,
     EventPageComponent,
     CommentComponent,
+    AddEventComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

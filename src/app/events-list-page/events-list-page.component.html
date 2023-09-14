@@ -1,8 +1,8 @@
 <div class="events container">
   <div class="events-search"><h2>Event search engine</h2></div>
-  <form class="events-filtrs">
+  <form class="events-filtrs" (ngSubmit)="onSubmit()" #searchEvents="ngForm">
     <div class="events-filtrs-options">
-      <select formControlName="category">
+      <select name="category" ngModel>
         <option value="">All Category</option>
         <option value="Theater Performances">Theater Performances</option>
         <option value="Stand-up Performances">Stand-up Performances</option>
@@ -11,7 +11,7 @@
         <option value="Sport Event">Sport Event</option>
         <option value="Other Events">Other Events</option>
       </select>
-      <select formControlName="localization">
+      <select name="localization" ngModel>
         <option value="All Localization">All Localization</option>
         <option value="woj. Dolnośląskie">woj. Dolnośląskie</option>
         <option value="woj. Kujawsko-pomorskie">woj. Kujawsko-pomorskie</option>
@@ -32,14 +32,19 @@
         <option value="woj. Wielkopolskie">woj. Wielkopolskie</option>
         <option value="woj. Zachodniopomorskie">woj. Zachodniopomorskie</option>
       </select>
-      <select formControlName="localization">
+      <select name="localization" ngModel>
         <option value="Sort By Date">Sort By Date</option>
         <option value="Sort By City">Sort By City</option>
       </select>
     </div>
     <div class="events-filtrs-text">
-      <input type="text" placeholder="Event name or city" />
-      <button class="btn-main">Search Events</button>
+      <input
+        type="text"
+        placeholder="Event name or city"
+        name="searchText"
+        ngModel
+      />
+      <button type="submit" class="btn-main">Search Events</button>
     </div>
   </form>
   <app-event-list-item />

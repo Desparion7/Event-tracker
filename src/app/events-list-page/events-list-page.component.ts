@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./events-list-page.component.css']
 })
 export class EventsListPageComponent {
-
+  onSubmit(){}
 }

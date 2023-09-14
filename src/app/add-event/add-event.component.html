@@ -1,0 +1,39 @@
+<div class="newEvent container">
+  <h2>Add a new event so more people can participate.</h2>
+  <form (ngSubmit)="onSubmit(newEventForm)" #newEventForm="ngForm">
+    <div>
+      <label for="eventName">Event name</label>
+      <input type="text" id="eventName" name="eventName" ngModel required />
+    </div>
+    <div>
+      <label for="eventName">Event date and time</label>
+      <input
+        type="datetime-local"
+        id="eventDate"
+        name="eventDate"
+        ngModel
+        required
+      />
+    </div>
+    <div>
+      <label for="eventCity">City</label>
+      <input type="text" id="eventCity" name="eventCity" ngModel required />
+    </div>
+    <div>
+      <label for="imagePath">Image URL</label>
+      <input
+        (change)="showPreview($event)"
+        type="file"
+        id="imagePath"
+        name="imagePath"
+        ngModel
+        required
+        #imagePath
+      />
+    </div>
+    <div>
+      <img [src]="imgSrc" />
+    </div>
+    <button type="submit">test</button>
+  </form>
+</div>
